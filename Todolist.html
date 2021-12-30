@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,300;1,500&display=swap');
+        body {
+            margin: 0px;
+            padding: 0px;
+            margin-right: 450px ;
+            font-family: 'Nunito', sans-serif;
+
+            font-weight: 900px;
+
+            background-color: rgb(32, 51, 51);
+            font-style: bold;
+
+
+
+        }
+
+
+        .Title{
+
+           letter-spacing: 5px;
+           color: white;
+           position: relative;
+
+           left: 40%;
+          
+
+           
+           
+
+        }
+
+
+
+
+
+        .addStuff{
+            border: none;  
+            padding: 20px;
+            margin: 50px;
+            width: 50px;
+            min-width: 30%;
+            min-height: 50px;
+            border-radius: 19px;
+            background-color: darkslategrey;
+            color: wheat;
+            box-shadow: 5px 5px 9px black;
+        }
+        
+
+
+        .task-class{
+            color: rgb(134, 133, 133);
+            margin: 45px;
+            list-style-type: none;
+
+        }
+
+        .taskBar{
+
+            border: 1px solid;
+            margin: 60px;
+
+            border-radius: 26px;
+
+
+            background-color:rgb(14, 17, 17);
+            box-shadow: -5px -5px 3px black;
+
+            
+        }   
+        .add-task{
+
+            border-radius: 4px;
+            padding: 20px;
+            margin: 60px;
+            position: relative;
+            left: 1%;
+            background-color: rgb(20, 20, 20);
+            box-shadow: -5px -5px 3px black;
+            border: none;
+            border-radius: 59px;
+            color: white;
+        }
+
+
+        .add-task:hover{
+            background-color: white;
+            box-shadow: 10px 10px 20px white;
+
+            transition: 3s;
+            border-radius: 1px;
+            transition: 0.5s;
+            color: black;
+        }
+        #thingsToDo{
+            position: relative;
+            left: 5.5%;
+            border: none;
+            height: 32px;
+            border-radius: 9px;
+            box-shadow: 5px 5px 9px black;
+            background-color: rgb(27, 27, 27);
+            font-style: 'Nunito' sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class='Title'> Todo List</h1>
+    
+    
+<div class="addStuff">
+
+  <h2 class="title-addatask">Add a task</h2>  
+</div>
+
+
+<input type="text" id="thingsToDo">
+
+<div class="taskBar">
+
+
+
+
+    <ul id='tasks'>
+        <li class='task-class'> </li>
+    
+
+
+
+
+        
+
+    </ul>
+
+
+
+</div>
+
+<button class="add-task" id='add-task'> Add +  </button>
+<button class="add-task" id='remove-task'> Remove -   </button>
+<button class="add-task" id='clear'> Clear  </button>
+
+
+
+
+
+<script>
+
+
+const add_task= document.getElementById('add-task')
+const remove_task= document.getElementById('remove-task')
+
+things = document.getElementById('thingsToDo').value    
+
+add_task.onclick= function() {
+
+
+
+    if (things==''){
+        alert('Please enter a task ')
+    }
+
+
+    else{
+
+        var c=document.createElement('li');
+        c.classList.add('task-class');
+        things = document.getElementById('thingsToDo').value    
+        c.innerHTML =    things;
+
+        document.getElementById('tasks').appendChild(c);
+        console.log('added')    
+    }
+
+
+
+
+
+
+
+}
+var s = document.getElementById('tasks')
+
+remove_task.onclick =()=>{
+    
+    s.removeChild(s.childNodes[1]);
+    console.log('removed')
+}
+
+
+</script>
+</body>
+</html>
